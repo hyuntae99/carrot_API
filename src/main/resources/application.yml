@@ -6,3 +6,6 @@ spring:
     username: master
     password: ht991202!
 
+server:
+  port: 9000
+
