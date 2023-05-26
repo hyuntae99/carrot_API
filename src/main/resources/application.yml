@@ -1,11 +1,13 @@
-
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://hyunndb.cuq9ijf7omb7.ap-northeast-2.rds.amazonaws.com:3306/carrot?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: master
-    password: ht991202!
-
 server:
   port: 9000
+
+spring:
+  application:
+    name: carrot
+  datasource:
+    url: jdbc:mysql://hyunndb.cuq9ijf7omb7.ap-northeast-2.rds.amazonaws.com/carrot?autoReconnect=true
+    username: master
+    password: ht991202!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
 
