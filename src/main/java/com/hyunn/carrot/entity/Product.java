@@ -43,8 +43,8 @@ public class Product extends BaseTimeEntity {
     @Size(min = 10, max = 100, message = "내용은 10글자 이상 100글자 이내로 입력해주세요.")
     private String content;
 
-    @NotNull(message = "가격은 필수 입력 값입니다.")
-    @PositiveOrZero(message = "양수만 입력해주세요.")
+    @NotNull(message = "판매자 일련번호는 필수 입력 값입니다.")
+    @Min(value = 0, message = "판매자 일련번호는 양수만 입력해주세요.")
     private long member_id;
 
 
@@ -59,6 +59,8 @@ public class Product extends BaseTimeEntity {
         this.chatting_count = chatting_count;
         this.content = content;
     }
+
+    // 관심 수, 채팅방 수 메소드 만들기
 
 
 }

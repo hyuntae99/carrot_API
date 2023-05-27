@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
@@ -20,11 +21,11 @@ public class Interest {
     private Long id;
 
     @NotNull(message = "상품 번호는 필수 입력 값입니다.")
-    @PositiveOrZero(message = "양수만 입력해주세요.")
+    @Min(value = 0, message = "상품 번호는 양수만 입력해주세요.")
     private Long product_id;
 
     @NotNull(message = "회원 번호는 필수 입력 값입니다.")
-    @PositiveOrZero(message = "양수만 입력해주세요.")
+    @Min(value = 0, message = "회원 번호는 양수만 입력해주세요.")
     private Long member_id;
 
 
