@@ -1,6 +1,5 @@
 package com.hyunn.carrot.service;
 
-
 import com.hyunn.carrot.entity.Interest;
 import com.hyunn.carrot.repository.InterestRepository;
 import lombok.RequiredArgsConstructor;
@@ -29,8 +28,4 @@ public class InterestService {
         Interest interest = findById(id);
         interestRepository.delete(interest);
     }
-
-
-
-
 }
