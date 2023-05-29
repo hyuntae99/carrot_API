@@ -18,8 +18,8 @@ public class ChattingController {
     private final ChattingRepository chattingRepository;
 
     @PostMapping("/chatting")
-    public Long create(@Valid @RequestBody Chatting interest) {
-        return chattingService.save(interest);
+    public Long create(@Valid @RequestBody Chatting chatting) {
+        return chattingService.save(chatting);
     }
 
     @PatchMapping("/chatting/{id}")

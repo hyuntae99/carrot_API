@@ -50,10 +50,15 @@ public class Member {
 
     private String profile_url;
 
+    @Max(value = 2100000000, message = "Integer 범위 내에서만 입력해주세요.")
+    @Min(value = -2100000000, message = "Integer 범위 내에서만 입력해주세요.")
+    private int account = 0;
+
+
 
     // 회원 정보 업데이트
     public void update(String email, String password, String name, String nickname,
-                       String phone_num, String profile, int manner_temp, String profile_url){
+                       String phone_num, String profile, int manner_temp, String profile_url, int account){
         this.email = email;
         this.password = password;
         this.name = name;
@@ -62,6 +67,7 @@ public class Member {
         this.profile = profile;
         this.manner_temp = manner_temp;
         this.profile_url = profile_url;
+        this.account = account;
     }
 
 }

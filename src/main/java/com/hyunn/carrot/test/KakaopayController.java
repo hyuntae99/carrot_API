@@ -1,4 +1,4 @@
-package com.hyunn.carrot.controller;
+package com.hyunn.carrot.test;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -21,7 +21,7 @@ public class KakaopayController {
             URL address = new URL("https://kapi.kakao.com/v1/payment/ready");
             HttpURLConnection connection = (HttpURLConnection) address.openConnection();
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Authorization", "KakaoAK 27809591c7e74888a348f6c8ecef80da");
+            connection.setRequestProperty("Authorization", "KakaoAK ");
             connection.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
             connection.setDoOutput(true);
 

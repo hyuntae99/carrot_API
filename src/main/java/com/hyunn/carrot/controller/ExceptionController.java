@@ -62,6 +62,10 @@ public class ExceptionController {
                     code = ErrorCode.EMAIL.getCode();
                     description = ErrorCode.EMAIL.getDescription();
                     break;
+                case "Max":
+                    code = ErrorCode.MAX_VALUE.getCode();
+                    description = ErrorCode.MAX_VALUE.getDescription();
+                    break;
             }
         }
 

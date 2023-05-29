@@ -28,7 +28,7 @@ public class MemberService {
     public Long update(Long id, Member member){
         Member currentUser = findById(id);
         currentUser.update(member.getEmail(), member.getPassword(), member.getName(), member.getNickname(),
-                member.getPhone_num(), member.getProfile(), member.getManner_temp(), member.getProfile_url());
+                member.getPhone_num(), member.getProfile(), member.getManner_temp(), member.getProfile_url(), member.getAccount());
         return id;
     }
 

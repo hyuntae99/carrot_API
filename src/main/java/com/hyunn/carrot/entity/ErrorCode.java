@@ -9,6 +9,7 @@ public enum ErrorCode {
     , PATTERN("ERROR_CODE_PATTERN","값 형식이 다릅니다.")
     , NOT_BLANK("ERROR_CODE_NOT_BLANK","필수값이 누락되었습니다.")
     , EMAIL("ERROR_CODE_EMAIL","이메일 형식이 아닙니다.")
+    , MAX_VALUE("ERROR_CODE_MAX_VALUE", "최댓값보다 작아야 합니다.")
     ;
 
     @Getter

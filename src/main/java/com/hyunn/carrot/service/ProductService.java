@@ -26,7 +26,7 @@ public class ProductService {
     @Transactional
     public Long update(Long id, Product product){
         Product currentProduct = findById(id);
-        currentProduct.update(product.getTitle(), product.getCategory(), product.getPlace(), product.getPrice(),
+        currentProduct.update(product.getTitle(), product.getCategory(), product.getItem_name(), product.getPlace(), product.getPrice(),
                 product.getState(), product.getInterest_count(), product.getChatting_count(), product.getContent());
         currentProduct.preUpdate();
         return id;

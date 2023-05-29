@@ -25,6 +25,9 @@ public class Product extends BaseTimeEntity {
     @NotBlank(message = "카테고리는 필수 입력 값입니다.")
     private String category;
 
+    @NotBlank(message = "상품 이름은 필수 입력 값입니다.")
+    private String item_name;
+
     @NotBlank(message = "장소는 필수 입력 값입니다.")
     private String place;
 
@@ -32,15 +35,14 @@ public class Product extends BaseTimeEntity {
     @Min(value = 500, message = "가격은 500 이상으로 입력해주세요.")
     private int price;
 
-    @NotBlank(message = "상태는 필수 입력 값입니다.")
-    private String state;
+    private int state = 0;
 
     private int interest_count = 0;
 
     private int chatting_count = 0;
 
     @NotBlank(message = "내용은 필수 입력 값입니다.")
-    @Size(min = 10, max = 100, message = "내용은 10글자 이상 100글자 이내로 입력해주세요.")
+    @Size(min = 5, max = 100, message = "내용은 5글자 이상 100글자 이내로 입력해주세요.")
     private String content;
 
     @NotNull(message = "판매자 일련번호는 필수 입력 값입니다.")
@@ -48,10 +50,11 @@ public class Product extends BaseTimeEntity {
     private long member_id;
 
 
-    public void update(String title, String category, String place, int price, String state,
+    public void update(String title, String category, String item_name, String place, int price, int state,
                        int interest_count, int chatting_count, String content){
         this.title = title;
         this.category = category;
+        this.item_name = item_name;
         this.place = place;
         this.price = price;
         this.state = state;
