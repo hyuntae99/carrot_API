@@ -13,6 +13,7 @@ public class ProductImageService {
 
     private final ProductImageRepository productImageRepository;
 
+    @Transactional
     public ProductImage findById(Long id) {
         return productImageRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 사진입니다."));

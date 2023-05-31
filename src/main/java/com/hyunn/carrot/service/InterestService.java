@@ -13,6 +13,7 @@ public class InterestService {
 
     private final InterestRepository interestRepository;
 
+    @Transactional
     public Interest findById(Long id) {
         return interestRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 목록입니다."));

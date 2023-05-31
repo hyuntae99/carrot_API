@@ -13,6 +13,7 @@ public class ChattingService {
 
     private final ChattingRepository chattingRepository;
 
+    @Transactional
     public Chatting findById(Long id) {
         return chattingRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 목록입니다."));

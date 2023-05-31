@@ -13,6 +13,7 @@ import javax.transaction.Transactional;
 public class ProductService {
     public final ProductRepository productRepository;
 
+    @Transactional
     public Product findById(Long id){
         return productRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 상품입니다."));

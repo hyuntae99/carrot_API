@@ -45,6 +45,7 @@ public class KakaoPayService {
     private final MemberService memberService;
 
 
+    @Transactional
     public KakaoReadyResponse kakaoPayReady(Transaction transaction) {
 
         Product product = productService.findById(transaction.getProduct_id());
@@ -84,6 +85,7 @@ public class KakaoPayService {
     /**
      * 결제 완료 승인
      */
+    @Transactional
     public KakaoApproveResponse approveResponse(String pgToken) {
 
         // 카카오 요청
@@ -143,6 +145,7 @@ public class KakaoPayService {
     /**
      * 결제 환불
      */
+    @Transactional
     public KakaoCancelResponse kakaoCancel(Transaction transaction) {
 
         Product product = productService.findById(transaction.getProduct_id());
