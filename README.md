@@ -1,2 +1,1 @@
-# carrot_API
-Spring Boot를 이용한 당근마켓 API 구현
+![image](https://github.com/hyuntae99/carrot_API/assets/101180610/a1746e3d-78b0-479b-9eee-2fc195235e55)
