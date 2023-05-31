@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 작성 폼</title> <!-- 웹사이트 이름 -->
+</head>
+
+<!-- css -->
+<style>
+    .layout {
+        width : 500px;
+        margin : 0 auto;
+        margin-top : 40px;
+    }
+
+    .layout input {
+        width : 100%;
+        box-sizing : border-box
+    }
+
+    .layout textarea {
+        width : 100%;
+        margin-top : 10px;
+        min-height : 300px;
+    }
+
+</style>
+
+<body>
+    <div class="layout">
+        <!-- post 방식으로 board/writepro 로 이동시킴 -->
+        <form action="/board/writepro" method="post" enctype="multipart/form-data">
+            <input name="title" type="text" required> <!-- 제목 -->
+            <textarea name="content" required></textarea> <!-- 내용 -->
+            <input type="file" name="file">  <!-- 파일 -->
+            <button type="submit">작성</button> <!-- 제출 -->
+        </form>
+
+    </div>
+</body>
+</html>
