@@ -1,8 +1,11 @@
 package com.hyunn.carrot.controller;
 
+import com.hyunn.carrot.entity.Chatting;
 import com.hyunn.carrot.entity.Interest;
+import com.hyunn.carrot.entity.Product;
 import com.hyunn.carrot.repository.InterestRepository;
 import com.hyunn.carrot.service.InterestService;
+import com.hyunn.carrot.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,9 +19,14 @@ public class InterestController {
 
     private final InterestService interestService;
     private final InterestRepository interestRepository;
+    private final ProductService productService;
 
     @PostMapping("/interest")
     public Long create(@Valid @RequestBody Interest interest) {
+        Long product_id = interest.getProduct_id();
+        Product product = productService.findById(product_id);
+        int interest_count = product.getInterest_count();
+        product.setInterest_count(interest_count+1);
         return interestService.save(interest);
     }
 
@@ -29,6 +37,11 @@ public class InterestController {
 
     @DeleteMapping("/interest/{id}")
     public Long delete(@PathVariable Long id) {
+        Interest interest = interestService.findById(id);
+        Long product_id = interest.getProduct_id();
+        Product product = productService.findById(product_id);
+        int interest_count = product.getInterest_count();
+        product.setInterest_count(interest_count-1);
         interestService.delete(id);
         return id;
     }

@@ -4,6 +4,7 @@ import com.hyunn.carrot.entity.KakaoPay.KakaoApproveResponse;
 import com.hyunn.carrot.entity.KakaoPay.KakaoCancelResponse;
 import com.hyunn.carrot.entity.KakaoPay.KakaoReadyResponse;
 import com.hyunn.carrot.entity.KakaoPay.Transaction;
+import com.hyunn.carrot.entity.Product;
 import com.hyunn.carrot.repository.TransactionRepository;
 import com.hyunn.carrot.service.KakaoPayService;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -22,8 +26,10 @@ public class KakaoPayController {
 
     private final TransactionRepository transactionRepository;
 
+    private final ProductController productController;
+
     /**
-     * 거래 내역 리스트 확인
+     * 전체 거래 내역 리스트 확인
      */
     @GetMapping("/list")
     public List<Transaction> findAll() {
@@ -31,10 +37,37 @@ public class KakaoPayController {
     }
 
     /**
+     * 회원별 거래 내역 리스트 확인
+     */
+    @GetMapping("/list/{member-id}")
+    public List<Transaction> findAllByMemberId(@PathVariable Long member_id) {
+        //판매자일 경우
+        List<Product> products_member = productController.findAllByMemberId(member_id);
+
+        // 구매자일 경우
+        List<Transaction> transactions = transactionRepository.findAll();
+        List<Transaction> transactions_member = new ArrayList<>(); // 초기화
+        for (Transaction transaction : transactions) {
+            // 판매자 확인
+            if (transaction.getBuyer_id() == member_id) {
+                transactions_member.add(transaction);
+            }
+            // 구매자 확인
+            for (Product product : products_member) {
+                if(transaction.getProduct_id() == product.getId()) {
+                    transactions_member.add(transaction);
+                }
+            }
+        }
+
+        return transactions_member;
+    }
+
+    /**
      * 결제요청
      */
     @PostMapping("/ready")
-    public KakaoReadyResponse readyToKakaoPay(@RequestBody Transaction transaction) {
+    public KakaoReadyResponse readyToKakaoPay(@Valid @RequestBody Transaction transaction) {
 
         kakaoPayService.save(transaction);
         return kakaoPayService.kakaoPayReady(transaction);

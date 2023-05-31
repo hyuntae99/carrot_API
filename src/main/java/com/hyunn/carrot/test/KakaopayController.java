@@ -21,7 +21,7 @@ public class KakaopayController {
             URL address = new URL("https://kapi.kakao.com/v1/payment/ready");
             HttpURLConnection connection = (HttpURLConnection) address.openConnection();
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Authorization", "KakaoAK ");
+            connection.setRequestProperty("Authorization", "KakaoAK 27809591c7e74888a348f6c8ecef80da");
             connection.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
             connection.setDoOutput(true);
 
@@ -29,9 +29,9 @@ public class KakaopayController {
             String parameter = "cid=TC0ONETIME"
                     + "&partner_order_id=partner_order_id"
                     + "&partner_user_id=partner_user_id"
-                    + "&item_name=초코파이"
+                    + "&item_name=Kandy"
                     + "&quantity=1"
-                    + "&total_amount=5000"
+                    + "&total_amount=10000000"
                     + "&vat_amount=200"
                     + "&tax_free_amount=0"
                     + "&approval_url=http://localhost:9000/"

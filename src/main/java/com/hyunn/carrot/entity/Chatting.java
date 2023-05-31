@@ -31,5 +31,7 @@ public class Chatting {
     @Min(value = 0, message = " 구매자 일련번호는 양수만 입력해주세요.")
     private Long buyer_id;
 
+    private int chat_account = 0;
+
 
 }

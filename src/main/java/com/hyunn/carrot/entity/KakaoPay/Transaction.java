@@ -17,10 +17,13 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // mysql, mariaDB 사용
     private Long id;
 
-    @NotNull
+    private String item_name = null; // 상품명
+
     @Max(value = 2100000000, message = "Integer 범위 내에서만 입력해주세요.")
     @Min(value = -2100000000, message = "Integer 범위 내에서만 입력해주세요.")
-    private int price;
+    private int price = 0;
+
+    private int point = 0;
 
     @NotNull
     @Min(value = 0, message = "상품 일련번호는 양수만 입력해주세요.")
@@ -37,8 +40,10 @@ public class Transaction {
     private String canceled_at = null; // 환불 시간
 
     // 환불 기록 업데이트
-    public void update(int price, Long product_id, Long buyer_id, String tid, String canceled_at) {
+    public void update(String item_name, int price, int point, Long product_id, Long buyer_id, String tid, String canceled_at) {
+        this.item_name = item_name;
         this.price = price;
+        this.point = point;
         this.product_id = product_id;
         this.buyer_id = buyer_id;
         this.tid = tid;

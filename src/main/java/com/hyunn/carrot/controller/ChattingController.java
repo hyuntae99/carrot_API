@@ -1,8 +1,10 @@
 package com.hyunn.carrot.controller;
 
 import com.hyunn.carrot.entity.Chatting;
+import com.hyunn.carrot.entity.Product;
 import com.hyunn.carrot.repository.ChattingRepository;
 import com.hyunn.carrot.service.ChattingService;
+import com.hyunn.carrot.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,9 +18,16 @@ public class ChattingController {
 
     private final ChattingService chattingService;
     private final ChattingRepository chattingRepository;
+    private final ProductService productService;
 
     @PostMapping("/chatting")
     public Long create(@Valid @RequestBody Chatting chatting) {
+
+        // 상품 채팅 수 증가
+        Long product_id = chatting.getProduct_id();
+        Product product = productService.findById(product_id);
+        int chatting_count = product.getChatting_count();
+        product.setChatting_count(chatting_count+1);
         return chattingService.save(chatting);
     }
 
@@ -34,6 +43,13 @@ public class ChattingController {
 
     @DeleteMapping("/chatting/{id}")
     public Long delete(@PathVariable Long id) {
+
+        // 상품 채팅 수 감소
+        Chatting chatting = chattingService.findById(id);
+        Long product_id = chatting.getProduct_id();
+        Product product = productService.findById(product_id);
+        int chatting_count = product.getChatting_count();
+        product.setChatting_count(chatting_count-1);
         chattingService.delete(id);
         return id;
     }
@@ -55,17 +71,5 @@ public class ChattingController {
         return chattings_Product;
     }
 
-
-    @GetMapping("/chattings/count")
-    public Long countByProductId(@RequestParam("product-id") Long product_id) {
-        long count = 0;
-        List<Chatting> chattings = chattingRepository.findAll();
-        for (Chatting chatting : chattings) {
-            if (chatting.getProduct_id() == product_id) {
-                count++;
-            }
-        }
-        return count;
-    }
 
 }

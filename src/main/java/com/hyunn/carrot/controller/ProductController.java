@@ -23,11 +23,24 @@ public class ProductController {
 
     @GetMapping("/product/{id}")
     public Product read(@PathVariable Long id) {
-        return productService.findById(id);}
+        return productService.findById(id);
+    }
 
     @GetMapping("/products")
     public List<Product> findAll() {
         return productRepository.findAll();
+    }
+
+    @GetMapping("/products/available")
+    public List<Product> findAllByState() {
+        List<Product> products = productRepository.findAll();
+        List<Product> products_available= new ArrayList<>(); // 초기화
+        for (Product product : products) {
+            if (product.getState() == 0) {
+                products_available.add(product);
+            }
+        }
+        return products_available;
     }
 
     @GetMapping("/products/{member-id}")

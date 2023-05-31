@@ -37,7 +37,7 @@ public class KakaoPayService {
 
 
     static final String cid = "TC0ONETIME"; // 가맹점 테스트 코드
-    static final String admin_Key = ""; // 공개 조심! 본인 애플리케이션의 어드민 키를 넣어주세요
+    static final String admin_Key = "27809591c7e74888a348f6c8ecef80da"; // 공개 조심! 본인 애플리케이션의 어드민 키를 넣어주세요
     private KakaoReadyResponse kakaoReady;
 
     private final ProductService productService;
@@ -74,7 +74,7 @@ public class KakaoPayService {
                 requestEntity,
                 KakaoReadyResponse.class);
 
-        // 구매기록에 Tid와 구매시간 저장
+        // 구매기록에 상품명과 Tid와 구매시간 저장
         transaction.setTid(kakaoReady.getTid());
         transaction.setCreated_at(kakaoReady.getCreated_at());
 
@@ -121,18 +121,21 @@ public class KakaoPayService {
         Long seller_id = product_sell.getMember_id(); // 판매자
         Long buyer_id = target_transaction.getBuyer_id(); // 구매자
 
-        // 구매자 잔고 증가
+        // 판매자 잔고 증가
         Member seller = memberService.findById(seller_id);
         seller.setAccount(seller.getAccount() + product_sell.getPrice());
 
-        // 판매자 잔고 감소
+        // 구매자 잔고 감소
         Member buyer = memberService.findById(buyer_id);
-        buyer.setAccount(buyer.getAccount() - product_sell.getPrice());
+        buyer.setAccount(buyer.getAccount() - product_sell.getPrice() + approveResponse.getAmount().getPoint());
 
         // 판매 처리
         product_sell.setState(1);
 
+        // 구매 기록 (이름, 가격, 포인트)
+        target_transaction.setItem_name(product_sell.getItem_name());
         target_transaction.setPrice(product_sell.getPrice());
+        target_transaction.setPoint(-1 * approveResponse.getAmount().getPoint());
 
         return approveResponse;
     }
@@ -175,15 +178,15 @@ public class KakaoPayService {
 
         // 구매자 잔고 증가
         Member buyer = memberService.findById(buyer_id);
-        buyer.setAccount(buyer.getAccount() + product_refund.getPrice());
+        buyer.setAccount(buyer.getAccount() + product_refund.getPrice() - cancelResponse.getAmount().getPoint());
 
         // 판매 처리 취소
         product_refund.setState(0);
 
         // 환불된 기록 저장
         Transaction new_transaction = new Transaction();
-        new_transaction.update((-1 * cancelResponse.getCanceled_amount().getTotal()),
-                product_id, buyer_id, transaction.getTid(), cancelResponse.getCanceled_at());
+        new_transaction.update(cancelResponse.getItem_name(),(-1 * cancelResponse.getCanceled_amount().getTotal()),
+                cancelResponse.getAmount().getPoint(), product_id, buyer_id, transaction.getTid(), cancelResponse.getCanceled_at());
 
         transactionRepository.save(new_transaction);
 
