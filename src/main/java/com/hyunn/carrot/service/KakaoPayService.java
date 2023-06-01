@@ -25,6 +25,7 @@ public class KakaoPayService {
 
     private final TransactionRepository transactionRepository;
 
+    @Transactional
     public Transaction findById(Long id){
         return transactionRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 유저입니다."));
