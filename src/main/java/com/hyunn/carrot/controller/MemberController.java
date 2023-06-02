@@ -16,6 +16,7 @@ public class MemberController {
     private final MemberService memberService;
     private final MemberRepository memberRepository;
 
+
     @PostMapping("/member")
     public Long create(@Valid @RequestBody Member member) {
         return memberService.save(member);

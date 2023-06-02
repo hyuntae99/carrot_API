@@ -28,11 +28,11 @@ public class Member {
     private String password;
 
     @NotBlank(message = "이름은 필수 입력 값입니다.")
-    @Pattern(regexp = "^[ㄱ-ㅎ가-힣a-z0-9-_]{1,10}$", message = "이름은 특수문자를 제외한 1~10자리여야 합니다.")
+    @Pattern(regexp = "^[ㄱ-ㅎ가-힣a-z0-9-_]{1,15}$", message = "이름은 특수문자를 제외한 1~15자리여야 합니다.")
     private String name;
 
     @NotBlank(message = "닉네임은 필수 입력 값입니다.")
-    @Pattern(regexp = "^[ㄱ-ㅎ가-힣a-z0-9-_]{2,10}$", message = "닉네임은 특수문자를 제외한 2~10자리여야 합니다.")
+    @Pattern(regexp = "^[ㄱ-ㅎ가-힣a-z0-9-_]{1,15}$", message = "닉네임은 특수문자를 제외한 1~15자리여야 합니다.")
     private String nickname;
 
     @NotBlank(message = "번호는 필수 입력 값입니다.")
@@ -48,13 +48,13 @@ public class Member {
 
     private LocalDateTime create_date = LocalDateTime.now();
 
-    private String profile_url;
+    private String profile_url = null;
 
     @Max(value = 2100000000, message = "Integer 범위 내에서만 입력해주세요.")
     @Min(value = -2100000000, message = "Integer 범위 내에서만 입력해주세요.")
     private int account = 0;
 
-    private String  site = null;
+    private String  site = "일반 회원";
 
     // 회원 정보 업데이트
     public void update(String email, String password, String name, String nickname,

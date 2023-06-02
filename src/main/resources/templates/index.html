@@ -29,6 +29,9 @@
     <div class="login-box">
         <a th:href="@{/login}" class="login-link">통합 로그인</a>
     </div>
+    <div class="login-box">
+        <a th:href="@{/login_normal}" class="login-link">일반 로그인</a>
+    </div>
     <div th:if="${session.user != null}">
         <div class="info">
             이메일: [[${session.user.email}]]

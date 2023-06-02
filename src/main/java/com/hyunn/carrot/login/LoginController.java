@@ -1,8 +1,8 @@
 package com.hyunn.carrot.login;
 
-import com.hyunn.carrot.controller.MemberController;
 import com.hyunn.carrot.entity.Member;
 import com.hyunn.carrot.repository.MemberRepository;
+import com.hyunn.carrot.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ResolvableType;
@@ -10,15 +10,12 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+import java.util.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -26,8 +23,17 @@ public class LoginController {
     @Autowired
     MemberRepository memberRepository;
 
+    @Autowired
+    UserRepository userRepository;
+
+    @Autowired
+    private HttpSession httpSession;
+
+    @Autowired
+    private MemberService memberService;
+
     @GetMapping("/")
-    private String sns() {
+    private String index() {
         return "index";
     }
 
@@ -59,26 +65,70 @@ public class LoginController {
     }
 
 
-    // 일반 로그인 및 회원가입 구현해야 함!
-    @GetMapping("/login/member")
-    public String handleMemberLogin(@RequestParam("email") String email,
-                                    @RequestParam("password") String password) {
-        System.out.println(email);
-        System.out.println(password);
+    @GetMapping("/login_normal")
+    public String login_normal() {
+        return "login_normal";
+    }
+
+    @PostMapping("/login_normal")
+    public String handleMemberLogin(@RequestParam String email, @RequestParam String password,
+                                    HttpSession session, Model model) {
+
+        // 직접 로그인 처리
         List<Member> members = memberRepository.findAll();
         for (Member member : members) {
             if (member.getEmail().equals(email) && member.getPassword().equals(password)) {
-                return "index";
+                httpSession.setAttribute("authenticated", true);
+                session.setAttribute("authenticated", true);
+
+                Optional<User> optionalUser = userRepository.findByEmail(email);
+                User user;
+
+                if (optionalUser.isPresent()) {
+                    user = optionalUser.get();
+                } else {
+                    // 사용자 정보를 세션에 저장
+                    user = new User();
+                    user.setEmail(email);
+                    user.setName(member.getName());
+                    user.setRole(Role.ROLE_USER);
+                    user.setSite("normal");
+                    userRepository.save(user);
+                }
+
+                session.setAttribute("user", user);
+                model.addAttribute("message", "로그인되었습니다.");
+                model.addAttribute("searchUrl", "/");
+                return "message";
             }
         }
-        return "login";
+
+        model.addAttribute("message", "아이디 혹은 비밀번호가 틀렸습니다.");
+        model.addAttribute("searchUrl", "/login_normal");
+        return "message";
     }
 
-
-
-    @RequestMapping("/accessDenied")
-    public String accessDenied() {
-        return "accessDenied";
+    @GetMapping("/signup")
+    private String member() {
+        return "signup";
     }
+
+    @PostMapping("/signup")
+    public String create(Member member, Model model) {
+        try {
+            Long memberId = memberService.save(member);
+            if (memberId != null) {
+                model.addAttribute("message", "회원가입이 완료되었습니다.");
+                model.addAttribute("searchUrl", "/");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            model.addAttribute("message", "회원가입에 실패하였습니다.");
+            model.addAttribute("searchUrl", "/signup");
+        }
+        return "message";
+    }
+
 
 }
+
