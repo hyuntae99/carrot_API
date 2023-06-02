@@ -84,6 +84,8 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
             user.setRole(Role.ROLE_USER);
             userRepository.save(user);
 
+            // 쇼셜 회원가입으로 회원 등록
+            // 랜덤 함수 구현 필요할 듯
             Member new_member = new Member();
             new_member.update(email, "asd123!@#", name, "유저", "01000000000",
                     "랜덤생성랜덤생성랜덤생성", 36, null, 0);

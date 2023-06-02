@@ -59,10 +59,12 @@ public class LoginController {
     }
 
 
-    // 왜 안되지...?
+    // 일반 로그인 및 회원가입 구현해야 함!
     @GetMapping("/login/member")
     public String handleMemberLogin(@RequestParam("email") String email,
                                     @RequestParam("password") String password) {
+        System.out.println(email);
+        System.out.println(password);
         List<Member> members = memberRepository.findAll();
         for (Member member : members) {
             if (member.getEmail().equals(email) && member.getPassword().equals(password)) {

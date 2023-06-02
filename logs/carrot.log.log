@@ -11698,3 +11698,196 @@ List of constraint violations:[
 2023-06-02 17:55:20.337 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
 2023-06-02 17:55:20.339 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 2 ms
 2023-06-02 17:55:28.584 WARN  [http-nio-9999-exec-3] [o.a.catalina.util.SessionIdGeneratorBase] - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [405] milliseconds.
+2023-06-02 18:00:39.572 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:00:39.574 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-06-02 18:00:39.659 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2023-06-02 18:00:43.893 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Starting CarrotApplication using Java 11.0.18 on DESKTOP-8FQLBIN with PID 18184 (C:\carrot\build\classes\java\main started by 조현태 in C:\carrot)
+2023-06-02 18:00:43.893 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 6.2.5.Final
+2023-06-02 18:00:43.898 INFO  [main] [com.hyunn.carrot.CarrotApplication] - The following 1 profile is active: "prod"
+2023-06-02 18:00:44.688 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 18:00:44.776 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 79 ms. Found 8 JPA repository interfaces.
+2023-06-02 18:00:45.407 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 9999 (http)
+2023-06-02 18:00:45.416 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:00:45.416 INFO  [main] [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-06-02 18:00:45.416 INFO  [main] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-02 18:00:45.559 INFO  [main] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-06-02 18:00:45.559 INFO  [main] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1618 ms
+2023-06-02 18:00:45.672 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2023-06-02 18:00:46.006 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2023-06-02 18:00:46.050 INFO  [main] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 18:00:46.097 INFO  [main] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-02 18:00:46.248 INFO  [main] [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-02 18:00:46.356 INFO  [main] [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-02 18:00:47.115 INFO  [main] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 18:00:47.127 INFO  [main] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:00:47.669 WARN  [main] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 18:00:47.851 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6b6e2c83, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fbb098f, org.springframework.security.web.context.SecurityContextPersistenceFilter@54224125, org.springframework.security.web.header.HeaderWriterFilter@341889a1, org.springframework.security.web.authentication.logout.LogoutFilter@2d399e88, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@6a24c41d, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@5315210d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@feab3ae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f370472, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7866a7a6, org.springframework.security.web.session.SessionManagementFilter@3a225534, org.springframework.security.web.access.ExceptionTranslationFilter@3dbf3bc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7b9d602c]
+2023-06-02 18:00:48.039 INFO  [main] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-06-02 18:00:48.258 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:00:48.279 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-02 18:00:48.289 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Started CarrotApplication in 4.946 seconds (JVM running for 6.048)
+2023-06-02 18:00:48.505 INFO  [http-nio-9999-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-02 18:00:48.506 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-06-02 18:00:48.508 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 2 ms
+2023-06-02 18:00:49.072 WARN  [http-nio-9999-exec-1] [o.a.catalina.util.SessionIdGeneratorBase] - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [523] milliseconds.
+2023-06-02 18:02:08.689 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:02:08.694 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-06-02 18:02:08.779 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2023-06-02 18:02:12.141 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 6.2.5.Final
+2023-06-02 18:02:12.142 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Starting CarrotApplication using Java 11.0.18 on DESKTOP-8FQLBIN with PID 15620 (C:\carrot\build\classes\java\main started by 조현태 in C:\carrot)
+2023-06-02 18:02:12.145 INFO  [main] [com.hyunn.carrot.CarrotApplication] - The following 1 profile is active: "prod"
+2023-06-02 18:02:12.927 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 18:02:13.008 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 74 ms. Found 8 JPA repository interfaces.
+2023-06-02 18:02:13.555 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 9999 (http)
+2023-06-02 18:02:13.564 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:02:13.564 INFO  [main] [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-06-02 18:02:13.564 INFO  [main] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-02 18:02:13.701 INFO  [main] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-06-02 18:02:13.701 INFO  [main] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1494 ms
+2023-06-02 18:02:13.817 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2023-06-02 18:02:14.191 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2023-06-02 18:02:14.234 INFO  [main] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 18:02:14.276 INFO  [main] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-02 18:02:14.418 INFO  [main] [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-02 18:02:14.518 INFO  [main] [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-02 18:02:15.208 INFO  [main] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 18:02:15.228 INFO  [main] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:02:15.748 WARN  [main] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 18:02:15.917 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@51a5a8ba, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16eb93af, org.springframework.security.web.context.SecurityContextPersistenceFilter@4fc8163, org.springframework.security.web.header.HeaderWriterFilter@1f24e33d, org.springframework.security.web.authentication.logout.LogoutFilter@28befd62, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1f86f7da, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@28b4b10e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62f73b0c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2396408a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@404566e7, org.springframework.security.web.session.SessionManagementFilter@7683d632, org.springframework.security.web.access.ExceptionTranslationFilter@2d97344c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6258f9d1]
+2023-06-02 18:02:16.098 INFO  [main] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-06-02 18:02:16.308 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:02:16.331 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-02 18:02:16.342 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Started CarrotApplication in 4.75 seconds (JVM running for 6.0)
+2023-06-02 18:02:16.528 INFO  [http-nio-9999-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-02 18:02:16.528 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-06-02 18:02:16.530 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 2 ms
+2023-06-02 18:02:21.987 WARN  [http-nio-9999-exec-2] [o.a.catalina.util.SessionIdGeneratorBase] - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [413] milliseconds.
+2023-06-02 18:02:49.340 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:02:49.343 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-06-02 18:02:49.418 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2023-06-02 18:02:53.501 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Starting CarrotApplication using Java 11.0.18 on DESKTOP-8FQLBIN with PID 12504 (C:\carrot\build\classes\java\main started by 조현태 in C:\carrot)
+2023-06-02 18:02:53.501 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 6.2.5.Final
+2023-06-02 18:02:53.505 INFO  [main] [com.hyunn.carrot.CarrotApplication] - The following 1 profile is active: "prod"
+2023-06-02 18:02:54.239 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 18:02:54.325 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 76 ms. Found 8 JPA repository interfaces.
+2023-06-02 18:02:54.890 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 9999 (http)
+2023-06-02 18:02:54.899 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:02:54.899 INFO  [main] [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-06-02 18:02:54.899 INFO  [main] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-02 18:02:55.015 INFO  [main] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-06-02 18:02:55.015 INFO  [main] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1472 ms
+2023-06-02 18:02:55.126 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2023-06-02 18:02:55.805 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2023-06-02 18:02:55.838 INFO  [main] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 18:02:55.891 INFO  [main] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-02 18:02:56.034 INFO  [main] [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-02 18:02:56.134 INFO  [main] [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-02 18:02:56.833 INFO  [main] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 18:02:56.833 INFO  [main] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:02:57.405 WARN  [main] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 18:02:57.595 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7940b729, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@527d1fe1, org.springframework.security.web.context.SecurityContextPersistenceFilter@7010c9e4, org.springframework.security.web.header.HeaderWriterFilter@5e643402, org.springframework.security.web.authentication.logout.LogoutFilter@3b850bb7, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@63c88994, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@1932ad2c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10f60e36, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b9fc5c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24fb752f, org.springframework.security.web.session.SessionManagementFilter@78141c58, org.springframework.security.web.access.ExceptionTranslationFilter@5f7bd970, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a85454b]
+2023-06-02 18:02:57.824 INFO  [main] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-06-02 18:02:58.065 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:02:58.086 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-02 18:02:58.095 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Started CarrotApplication in 5.12 seconds (JVM running for 6.563)
+2023-06-02 18:03:16.044 INFO  [http-nio-9999-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-02 18:03:16.045 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-06-02 18:03:16.046 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 1 ms
+2023-06-02 18:03:28.401 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:03:28.406 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-06-02 18:03:28.490 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2023-06-02 18:03:31.877 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 6.2.5.Final
+2023-06-02 18:03:31.877 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Starting CarrotApplication using Java 11.0.18 on DESKTOP-8FQLBIN with PID 15280 (C:\carrot\build\classes\java\main started by 조현태 in C:\carrot)
+2023-06-02 18:03:31.880 INFO  [main] [com.hyunn.carrot.CarrotApplication] - The following 1 profile is active: "prod"
+2023-06-02 18:03:32.643 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 18:03:32.723 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 73 ms. Found 8 JPA repository interfaces.
+2023-06-02 18:03:33.288 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 9999 (http)
+2023-06-02 18:03:33.298 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:03:33.299 INFO  [main] [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-06-02 18:03:33.299 INFO  [main] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-02 18:03:33.420 INFO  [main] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-06-02 18:03:33.420 INFO  [main] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1494 ms
+2023-06-02 18:03:33.547 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2023-06-02 18:03:33.942 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2023-06-02 18:03:33.987 INFO  [main] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 18:03:34.036 INFO  [main] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-02 18:03:34.191 INFO  [main] [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-02 18:03:34.301 INFO  [main] [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-02 18:03:35.012 INFO  [main] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 18:03:35.027 INFO  [main] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:03:35.576 WARN  [main] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 18:03:35.775 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b85edc7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2bf45b7c, org.springframework.security.web.context.SecurityContextPersistenceFilter@42db3ff, org.springframework.security.web.header.HeaderWriterFilter@18139a43, org.springframework.security.web.authentication.logout.LogoutFilter@6a358906, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@35d53cd8, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@1bed61d2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@519e67e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@ea40c9f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2559f65c, org.springframework.security.web.session.SessionManagementFilter@3dbb7bb, org.springframework.security.web.access.ExceptionTranslationFilter@71689ee2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@57283fac]
+2023-06-02 18:03:35.982 INFO  [main] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-06-02 18:03:36.230 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:03:36.252 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-02 18:03:36.262 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Started CarrotApplication in 4.927 seconds (JVM running for 6.012)
+2023-06-02 18:03:37.567 INFO  [http-nio-9999-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-02 18:03:37.568 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-06-02 18:03:37.569 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 1 ms
+2023-06-02 18:03:42.864 WARN  [http-nio-9999-exec-3] [o.a.catalina.util.SessionIdGeneratorBase] - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [414] milliseconds.
+2023-06-02 18:04:34.413 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:04:34.415 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-06-02 18:04:34.499 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2023-06-02 18:04:38.009 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 6.2.5.Final
+2023-06-02 18:04:38.012 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Starting CarrotApplication using Java 11.0.18 on DESKTOP-8FQLBIN with PID 24652 (C:\carrot\build\classes\java\main started by 조현태 in C:\carrot)
+2023-06-02 18:04:38.014 INFO  [main] [com.hyunn.carrot.CarrotApplication] - The following 1 profile is active: "prod"
+2023-06-02 18:04:38.970 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 18:04:39.058 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 79 ms. Found 8 JPA repository interfaces.
+2023-06-02 18:04:39.720 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 9999 (http)
+2023-06-02 18:04:39.731 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:04:39.732 INFO  [main] [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-06-02 18:04:39.732 INFO  [main] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-02 18:04:39.898 INFO  [main] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-06-02 18:04:39.898 INFO  [main] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1839 ms
+2023-06-02 18:04:40.031 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2023-06-02 18:04:40.419 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2023-06-02 18:04:40.464 INFO  [main] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 18:04:40.506 INFO  [main] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-02 18:04:40.671 INFO  [main] [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-02 18:04:40.798 INFO  [main] [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-02 18:04:41.521 INFO  [main] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 18:04:41.542 INFO  [main] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:04:42.140 WARN  [main] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 18:04:42.338 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@30a5a58d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59cb10e0, org.springframework.security.web.context.SecurityContextPersistenceFilter@2396408a, org.springframework.security.web.header.HeaderWriterFilter@1d45c4b7, org.springframework.security.web.authentication.logout.LogoutFilter@23d07ad3, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@4244e477, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@8f8717b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64de9fa4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fd5d6d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d763ae5, org.springframework.security.web.session.SessionManagementFilter@1d6014a7, org.springframework.security.web.access.ExceptionTranslationFilter@4fc8163, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@22f7bf36]
+2023-06-02 18:04:42.519 INFO  [main] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-06-02 18:04:42.759 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:04:42.781 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-02 18:04:42.791 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Started CarrotApplication in 5.419 seconds (JVM running for 6.632)
+2023-06-02 18:04:42.899 INFO  [http-nio-9999-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-02 18:04:42.899 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-06-02 18:04:42.900 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 1 ms
+2023-06-02 18:04:48.443 WARN  [http-nio-9999-exec-2] [o.a.catalina.util.SessionIdGeneratorBase] - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [429] milliseconds.
+2023-06-02 18:04:57.479 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:04:57.481 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-06-02 18:04:57.557 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2023-06-02 18:05:00.953 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Starting CarrotApplication using Java 11.0.18 on DESKTOP-8FQLBIN with PID 14964 (C:\carrot\build\classes\java\main started by 조현태 in C:\carrot)
+2023-06-02 18:05:00.956 INFO  [main] [com.hyunn.carrot.CarrotApplication] - The following 1 profile is active: "prod"
+2023-06-02 18:05:00.957 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 6.2.5.Final
+2023-06-02 18:05:01.687 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 18:05:01.766 INFO  [main] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 71 ms. Found 8 JPA repository interfaces.
+2023-06-02 18:05:02.359 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 9999 (http)
+2023-06-02 18:05:02.368 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:05:02.368 INFO  [main] [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-06-02 18:05:02.368 INFO  [main] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-02 18:05:02.485 INFO  [main] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-06-02 18:05:02.485 INFO  [main] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1471 ms
+2023-06-02 18:05:02.604 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2023-06-02 18:05:02.954 INFO  [main] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2023-06-02 18:05:02.996 INFO  [main] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 18:05:03.040 INFO  [main] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-02 18:05:03.191 INFO  [main] [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-02 18:05:03.321 INFO  [main] [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-02 18:05:04.041 INFO  [main] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 18:05:04.053 INFO  [main] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:05:04.666 WARN  [main] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 18:05:04.840 INFO  [main] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4d682397, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@444ebefd, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d5958d3, org.springframework.security.web.header.HeaderWriterFilter@6632eb19, org.springframework.security.web.authentication.logout.LogoutFilter@22561412, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@5b16e486, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@2b85edc7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@200e6029, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66f223fa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ecf4b3e, org.springframework.security.web.session.SessionManagementFilter@5a95aaae, org.springframework.security.web.access.ExceptionTranslationFilter@18139a43, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b8f87dc]
+2023-06-02 18:05:05.038 INFO  [main] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-06-02 18:05:05.273 INFO  [main] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-9999"]
+2023-06-02 18:05:05.296 INFO  [main] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 9999 (http) with context path ''
+2023-06-02 18:05:05.307 INFO  [main] [com.hyunn.carrot.CarrotApplication] - Started CarrotApplication in 4.868 seconds (JVM running for 5.989)
+2023-06-02 18:05:28.810 INFO  [http-nio-9999-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-02 18:05:28.810 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-06-02 18:05:28.812 INFO  [http-nio-9999-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 2 ms
+2023-06-02 18:06:52.202 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 18:06:52.203 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-06-02 18:06:52.284 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
