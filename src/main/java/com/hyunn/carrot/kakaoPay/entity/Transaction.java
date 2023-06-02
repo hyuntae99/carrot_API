@@ -1,4 +1,4 @@
-package com.hyunn.carrot.entity.KakaoPay;
+package com.hyunn.carrot.kakaoPay.entity;
 
 import lombok.Data;
 

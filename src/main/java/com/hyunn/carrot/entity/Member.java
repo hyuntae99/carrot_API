@@ -54,7 +54,7 @@ public class Member {
     @Min(value = -2100000000, message = "Integer 범위 내에서만 입력해주세요.")
     private int account = 0;
 
-
+    private String  site = null;
 
     // 회원 정보 업데이트
     public void update(String email, String password, String name, String nickname,

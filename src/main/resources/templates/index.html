@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .login-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            font-size: 30px;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+        .info {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+    <div class="login-box">
+        <a th:href="@{/login}" class="login-link">통합 로그인</a>
+    </div>
+    <div th:if="${session.user != null}">
+        <div class="info">
+            이메일: [[${session.user.email}]]
+        </div>
+        <div class="info">
+            이름: [[${session.user.name}]]
+        </div>
+        <div class="info">
+            사이트: [[${session.user.site}]]
+        </div>
+        <a th:href="@{/logout}">logout</a>
+    </div>
+</div>
+
+</body>
+</html>
