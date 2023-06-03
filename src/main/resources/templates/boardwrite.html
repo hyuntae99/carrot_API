@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 작성 폼</title> <!-- 웹사이트 이름 -->
+</head>
+
+<!-- css -->
+<style>
+    .layout {
+        width : 500px;
+        margin : 0 auto;
+        margin-top : 40px;
+    }
+
+    .layout input,
+    .layout textarea {
+        width : 100%;
+        box-sizing : border-box;
+        margin-top: 10px;
+    }
+
+    .layout textarea {
+        min-height : 300px;
+    }
+
+</style>
+
+<body>
+<div class="layout">
+    <!-- post 방식으로 board/writepro 로 이동시킴 -->
+    <form action="/board/writepro" method="post" enctype="multipart/form-data">
+        <input name="title" type="text" placeholder="제목" required>
+        <input name="category" type="text" placeholder="카테고리" required>
+        <input name="place" type="text" placeholder="장소" required>
+        <input name="item_name" type="text" placeholder="상품명" required>
+        <input name="price" type="number" placeholder="가격" required>
+        <textarea name="content" placeholder="내용" required></textarea>
+        <input type="file" name="file">
+        <button type="submit">작성</button>
+    </form>
+
+</div>
+</body>
+</html>

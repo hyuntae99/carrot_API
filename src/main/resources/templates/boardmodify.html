@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시물 수정 폼</title>
+</head>
+<style>
+  .layout {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+
+  .layout input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .layout textarea {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 300px;
+  }
+</style>
+<body>
+<div class="layout">
+  <form th:action="@{/board/update/{id}(id=${board.id})}" method="post" enctype="multipart/form-data">
+    제목
+    <input name="title" type="text" th:value="${board.title}" required>
+    카테고리
+    <input name="category" type="text" th:value="${board.category}" required>
+    위치
+    <input name="place" type="text" th:value="${board.place}" required>
+    상품 이름
+    <input name="item_name" type="text" th:value="${board.item_name}" required>
+    가격
+    <input name="price" type="number" th:value="${board.price}" required>
+    내용
+    <textarea name="content" required th:text="${board.content}"></textarea>
+    <input type="hidden" name="existingFile" th:value="${board.filename}">
+    <div th:if="${board.filename != null}">
+      <p>기존 파일:</p>
+      <p th:text="${board.filename}"></p>
+    </div>
+    <input type="file" name="file">
+    <button type="submit">수정</button>
+  </form>
+</div>
+</body>
+</html>
