@@ -24,8 +24,8 @@ spring:
             redirect-uri: http://localhost:9000/login/oauth2/code/google
             scope: email
           naver:
-            client-id: BIi7FP8Gn9awHPw32BtN
-            client-secret: 3eqG0fsr1q
+            client-id: tGYxbLNA164pXlARLhx3
+            client-secret: xacId9VXIF
             redirect-uri: http://localhost:9000/login/oauth2/code/naver
             authorization-grant-type: authorization_code
             scope: email
