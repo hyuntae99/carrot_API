@@ -79,7 +79,10 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         } else {
             user = new User();
             user.setEmail(email);
-            user.setName(name != null ? name : "권한없음");
+            if (name == null)
+                user.setName("권한없음");
+            else
+                user.setName(name);
             user.setSite(site);
             user.setRole(Role.ROLE_USER);
             userRepository.save(user);
