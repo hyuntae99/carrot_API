@@ -36,6 +36,9 @@ dependencies {
 
 	// OAuth 2.0 관련 의존성
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	// s3 의존성
+	implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
 }
 
 tasks.named('test') {
