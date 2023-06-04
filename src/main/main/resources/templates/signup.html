@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Member Registration</title>
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .registration-box {
+      border: 1px solid #ccc;
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      width: fit-content;
+      margin-bottom: 10px;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    .submit-button {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      transition-duration: 0.4s;
+    }
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      resize: vertical;
+    }
+  </style>
+</head>
+<body>
+<div class="center">
+  <div class="registration-box">
+    <h2>회원가입</h2>
+    <form method="post" action="/signup" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required/>
+      </div>
+      <div class="form-group">
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required/>
+      </div>
+      <div class="form-group">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required/>
+      </div>
+      <div class="form-group">
+        <label for="nickname">닉네임:</label>
+        <input type="text" id="nickname" name="nickname" required/>
+      </div>
+      <div class="form-group">
+        <label for="phone_num">전화번호:</label>
+        <input type="text" id="phone_num" name="phone_num" required/>
+      </div>
+      <div class="form-group">
+        <label for="profile">프로필:</label>
+        <textarea id="profile" name="profile" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="profile_url">프로필 URL:</label>
+        <input type="text" id="profile_url" name="profile_url"/>
+      </div>
+      <button type="submit" class="submit-button">제출</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+spring:
+  config:
+    activate:
+      on_profile: dev
+  application:
+    name: carrot
+  datasource:
+    url: jdbc:mysql://hyunndb.cuq9ijf7omb7.ap-northeast-2.rds.amazonaws.com/carrot?autoReconnect=true
+    username: master
+    password: ht991202!
+    driver-class-name: com.mysql.cj.jdbc.Driver

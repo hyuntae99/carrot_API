@@ -8,13 +8,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class AWSService {
 
-    @Autowired
-    private AmazonS3 amazonS3;
+    private final AmazonS3 amazonS3;
 
     @Value("${cloud.aws.s3.bucket}")
     private String bucketName;
 
-    public String getFileUrl(String fileKey) {
+    @Autowired
+    public AWSService(AmazonS3 amazonS3) {
+        this.amazonS3 = amazonS3;
+    }
+
+    public String getFileUrl(String bucketName, String fileKey) {
         return amazonS3.getUrl(bucketName, fileKey).toString();
+    }
+
+    public String getFileUrl(String fileKey) {
+        return getFileUrl(bucketName, fileKey);
     }
 }

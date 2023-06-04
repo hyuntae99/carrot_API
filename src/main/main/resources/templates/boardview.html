@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세 페이지</title>
+    <style>
+        .attachment-image {
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        .info-item {
+            font-size: 15px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${board.title}">제목입니다.</h1>
+
+<div class="info-item">
+    <strong>카테고리 :</strong> <span th:text="${board.category}"></span>
+</div>
+<div class="info-item">
+    <strong>제품명 :</strong> <span th:text="${board.item_name}"></span>
+</div>
+<div class="info-item">
+    <strong>판매 상태 :</strong> <span th:text="${board.state == 0 ? '판매 중' : '판매 완료'}"></span>
+</div>
+
+<p th:text="${board.content}">내용이 들어갈 부분입니다.</p>
+
+<div th:if="${board.url}">
+    <div th:if="${board.url.endsWith('.jpg') or board.url.endsWith('.jpeg') or board.url.endsWith('.png') or board.url.endsWith('.PNG') or board.url.endsWith('.gif')}">
+        <img th:src="${board.url}" alt="첨부파일 미리보기" class="attachment-image">
+    </div>
+    <div th:unless="${board.url.endsWith('.jpg') or board.url.endsWith('.jpeg') or board.url.endsWith('.png') or board.url.endsWith('.gif')}">
+        <p>이미지 파일이 아닌 첨부파일입니다.</p>
+    </div>
+    <div>
+        <a th:href="${board.url}">첨부파일</a>
+    </div>
+</div>
+
+<div th:unless="${board.url}">
+    <p>첨부파일이 없습니다.</p>
+</div>
+
+<br>
+
+<div class="info-item">
+    <strong>장소 :</strong> <span th:text="${board.place}"></span>
+</div>
+<div class="info-item">
+    <strong>관심 수 :</strong> <span th:text="${board.interest_count} + '명'"></span>
+</div>
+<div class="info-item">
+    <strong>채팅 수 :</strong> <span th:text="${board.chatting_count} + '명'"></span>
+</div>
+<div class="info-item">
+    <strong>가격 :</strong> <span th:text="${board.price} + '원'"></span>
+</div>
+
+<br>
+
+<a th:href="@{/board/modify/{id}(id=${board.id})}">수정</a>
+<a th:href="@{/board/delete(id=${board.id})}">삭제</a>
+</body>
+</html>

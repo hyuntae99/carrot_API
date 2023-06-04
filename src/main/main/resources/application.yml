@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 8888
 cloud:
   aws:
     s3:
@@ -7,8 +7,8 @@ cloud:
     stack.auto: false
     region.static: ap-northeast-2
     credentials:
-      accessKey: AKIAU65GIVE2VGO7JUU3
-      secretKey: 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
+      accessKey: AKIAU65GIVE27256R6MG
+      secretKey: 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
 spring:
   application:
     name: carrot
@@ -30,19 +30,19 @@ spring:
           google:
             client-id: 33807763033-0v5cprhe2e10lablr41a6jsctuorifr7.apps.googleusercontent.com
             client-secret: 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
-            redirect-uri: http://localhost:9000/login/oauth2/code/google
+            redirect-uri: https://carrot.hyunn.shop/login/oauth2/code/google
             scope: email
           naver:
             client-id: tGYxbLNA164pXlARLhx3
             client-secret: xacId9VXIF
-            redirect-uri: http://localhost:9000/login/oauth2/code/naver
+            redirect-uri: https://carrot.hyunn.shop/login/oauth2/code/naver
             authorization-grant-type: authorization_code
             scope: email
             client-name: Naver
           kakao:
             client-id: 2b018bbff06bbad2999336e04c23e9cd
             client-secret: bLrsb7rclrg1VWjBkgIjGdJ5JABKJ9ug
-            redirect-uri: http://localhost:9000/login/oauth2/code/kakao
+            redirect-uri: https://carrot.hyunn.shop/login/oauth2/code/kakao
             authorization-grant-type: authorization_code
             client-authentication-method: POST
             scope: account_email
